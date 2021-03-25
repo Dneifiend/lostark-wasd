@@ -1,5 +1,7 @@
 var game = new qwertyGame
 game.reset()
+// game.setQWERTY()
+// game.setHTML()
 
 document.addEventListener('keypress', evt => {
     if ('qwerasdf'.indexOf(evt.key) !== -1) {
@@ -8,4 +10,4 @@ document.addEventListener('keypress', evt => {
 })
 
 
-var yb = document.getElementById('yb').contentWindow
+// var yb = document.getElementById('yb').contentWindow
