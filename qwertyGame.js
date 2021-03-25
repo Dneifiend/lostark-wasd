@@ -17,6 +17,10 @@ class qwertyGame {
         var othermode = mode === 'N' ? 'H' : 'N'
         document.querySelector(`#button-${mode}`).toggleAttribute('disabled')
         document.querySelector(`#button-${othermode}`).toggleAttribute('disabled')
+
+        document.getElementById('progress-bar').classList.remove('normal')
+        document.getElementById('progress-bar').classList.remove('hard')
+        document.getElementById('progress-bar').classList.add(mode)
         this.lastSuccess()
         return this._mode
     }
@@ -111,14 +115,14 @@ class qwertyGame {
     progressStart = () => {
         clearInterval(_si)
         this.progress = this.limitTime
-        // document.getElementById('progress-bar').style.width = "0%"
+
         var _si = setInterval(() => {
             if (!this.onDoing) {
                 clearInterval(_si)
             }
             else {
-
                 if (this.progress > 0) {
+                    document.getElementById('progress-bar').style.width = "0%"
                     this.progress -= 100
                     document.getElementById('left-time').textContent = this.progress / 1000 + ' 초'
                 }
@@ -140,7 +144,7 @@ class qwertyGame {
 
         document.getElementById('progress-container').remove()
         document.getElementById('container').innerHTML += `<div id="progress-container">
-        <div id="progress-bar" style="width:100%"></div>
+        <div id="progress-bar" class="${this.mode}" style="width:100%"></div>
         <div id="left-time">0.0 초</div>`
         this.setQWERTY()
         this.setHTML()

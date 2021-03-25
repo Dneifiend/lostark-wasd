@@ -140,7 +140,6 @@ div#container {
 }
 
 #progress-bar {
-    transition: width 5s linear;
     background: linear-gradient(180deg, rgb(28 113 248) 10%, rgb(5 97 244) 30%, rgb(0 82 213) 60%, rgb(0 84 218) 90%, rgb(76 144 255));
     z-index: 9998 !important;
     width: 100%;
@@ -149,14 +148,16 @@ div#container {
 
 }
 
+#progress-bar.N {
+    transition: width 8s linear;
+}
+
+#progress-bar.H {
+    transition: width 5s linear;
+}
+
 #left-time {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    /* margin: auto; */
-    margin-top: calc(25% + 43px);
+    transform: translateY(-37px);
     z-index: 19999 !important;
 }
 

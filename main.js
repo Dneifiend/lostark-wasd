@@ -4,8 +4,10 @@ game.reset()
 // game.setHTML()
 
 document.addEventListener('keypress', evt => {
-    if ('qwerasdf'.indexOf(evt.key) !== -1) {
-        game.check(evt.key.toUpperCase())
+    if (game.onDoing) {
+        if ('qwerasdf'.indexOf(evt.key) !== -1) {
+            game.check(evt.key.toUpperCase())
+        }
     }
 })
 
